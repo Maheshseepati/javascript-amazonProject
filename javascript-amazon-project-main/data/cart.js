@@ -1,5 +1,5 @@
 
- export let cart=JSON.parse( localStorage.getItem('cart'));
+ export let cart= JSON.parse( localStorage.getItem('cart'));
 
  if(!cart){
 cart = [{
@@ -54,4 +54,12 @@ cart = [{
 
     saveToStorage();
 
+  }
+  export function calculateCartQuantity(){
+    let cartQuantity = '';
+
+    cart.forEach((item)=>{
+      cartQuantity += item.quantity;
+    });
+    return cartQuantity;
   }
